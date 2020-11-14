@@ -146,7 +146,7 @@ public class test2 {
 					
 					System.out.println("---------");
 					for (int i = 0; i < sm.stuList.get(log).sbm.subList.size(); i++) {
-						System.out.println("["+(i+1)+"]");
+						System.out.print("["+(i+1)+"]");
 						sm.stuList.get(log).sbm.subList.get(i).Print();
 					}
 					System.out.println("---------");
