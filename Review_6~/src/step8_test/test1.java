@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.util.Scanner;
 import java.util.Vector;
 
-class Student{
+class Stu{
 	String id ="";
 	String pw ="";
 	
@@ -23,21 +23,21 @@ class Student{
 
 
 class Manager{
-	Vector<Student> list = new Vector<Student>();
+	Vector<Stu> list = new Vector<Stu>();
 	
-	void add_student(Student st) {
+	void add_student(Stu st) {
 		
 		list.add(st);
 	}
 	
-	Student remove_student(int index) {
-		Student del = list.get(index);
+	Stu remove_student(int index) {
+		Stu del = list.get(index);
 		list.remove(index);
 		
 		return del;
 	}
 	
-	int check_id(Student st) {
+	int check_id(Stu st) {
 		int check = -1;
 		for (int i = 0; i < list.size(); i++) {
 			if(st.id.equals(list.get(i).id)) {
@@ -53,7 +53,7 @@ class Manager{
 			for (int j = 0; j < list.size(); j++) {
 				if(list.get(i).id.compareTo(list.get(j).id) > 0) {
 				
-					Student temp = list.get(i);
+					Stu temp = list.get(i);
 					list.set(i, list.get(j));
 					list.set(j, temp); 
 				}
@@ -79,7 +79,7 @@ class Manager{
 		return data;
 	}
 	
-	void load_data(Vector<Student> temp) {
+	void load_data(Vector<Stu> temp) {
 		list = temp;
 	}
 	
@@ -107,7 +107,7 @@ public class test1 {
 			int sel = sc.nextInt();
 			
 			if(sel == 1) {
-				Student temp = new Student();
+				Stu temp = new Stu();
 				System.out.print("ID : ");
 				temp.id = sc.next();
 				
@@ -123,7 +123,7 @@ public class test1 {
 				}
 			}
 			else if(sel == 2) {
-				Student temp = new Student();
+				Stu temp = new Stu();
 				System.out.println("ID : ");
 				temp.id = sc.next();
 				
@@ -132,7 +132,7 @@ public class test1 {
 				if(check == -1) {
 					System.out.println("해당 ID가 없습니다");
 				}else {
-					Student del = m.remove_student(check);
+					Stu del = m.remove_student(check);
 					System.out.println(del.id+"님 탈퇴완료");
 				}
 				
@@ -166,9 +166,9 @@ public class test1 {
 						String data = br.readLine();
 						int cnt = Integer.parseInt(data);
 						
-						Vector<Student> list = new Vector<Student>();
+						Vector<Stu> list = new Vector<Stu>();
 						for (int i = 0; i < cnt; i++) {
-							Student temp = new Student();
+							Stu temp = new Stu();
 							data = br.readLine();
 							String value[] = data.split("/");
 							
