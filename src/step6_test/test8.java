@@ -23,7 +23,7 @@ class LadderGame{
 	int y = 0;
 	
 	void printLad() {
-		
+		System.out.println(" 1  2  3  4  5");
 		for (int i = 0; i < ladder.length; i++) {
 			for (int j = 0; j < ladder[i].length; j++) {
 				if(ladder[i][j] == 1) {
@@ -50,6 +50,8 @@ class LadderGame{
 			}
 			System.out.println();
 		}
+		System.out.println(" A  B  C  D  E");
+		System.out.println("\n");
 	}
 	
 	void choice() {
@@ -65,14 +67,34 @@ class LadderGame{
 	
 	
 	void play() {
-		if(ladder[y][x] == 0) {
-			y++;
-		}
-		else if(ladder[y][x] == 1) {
-			x++;y++;
-		}
-		else if(ladder[y][x] == 2) {
-			x--;y++;
+		printLad();
+		
+		while(true) {			
+			if(ladder[y][x] == 0) {
+				y += 1;
+				printLad();
+			}
+			else if(ladder[y][x] == 1) {
+				x += 1;
+				printLad();
+				y += 1;
+				printLad();
+			}
+			else if(ladder[y][x] == 2) {
+				x -= 1;
+				printLad();
+				y += 1;
+				printLad();
+			}
+			
+			if(y == 7) {
+				break;
+			}
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 		}
 	}
 	
@@ -80,18 +102,12 @@ class LadderGame{
 	void run() {
 		
 		printLad();
+		
 		choice();
+		play();
 		
 		
-		while(true) {
-			printLad();
-			play();
-			try {
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		
 	}
 }
 
