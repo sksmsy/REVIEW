@@ -1,4 +1,4 @@
-package step7_1;
+//package step7_1;
 //
 //class Subject{
 //	String name;
@@ -13,12 +13,12 @@ package step7_1;
 //
 //	public static void main(String[] args) {
 //
-////		Student st1 =new Student();
+//		Student st1 =new Student();
 //		
-////		Student st3[] = new Student[3];
-////		st3[0] = new Student();
-////		st3[1] = new Student();
-////		st3[2] = new Student();
+//		Student st3[] = new Student[3];
+//		st3[0] = new Student();
+//		st3[1] = new Student();
+//		st3[2] = new Student();
 //		
 //		Student [] st = new Student[3];
 //		
