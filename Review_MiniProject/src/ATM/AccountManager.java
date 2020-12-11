@@ -49,7 +49,7 @@ public class AccountManager {
 		int sel = sc.nextInt();
 		
 		Account[] temp = UserManager.instance.user[log].acc;
-		UserManager.instance.user[log].acc = new Account[cnt-1];
+		
 		
 		
 		
