@@ -64,9 +64,9 @@ public class FileManager {
 		BufferedReader br = null;
 		
 		try {
-			fr = new FileReader(file);
-			br = new BufferedReader(fr);
 			if(file.exists()) {
+				fr = new FileReader(file);
+				br = new BufferedReader(fr);
 				
 				
 				while(true) {
