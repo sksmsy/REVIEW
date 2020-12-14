@@ -37,6 +37,7 @@ public class AccountManager {
 	
 	void deleteAcc(int log) {
 		
+		
 		int cnt = UserManager.instance.user[log].accCnt;
 		
 		if(cnt == 0) {
@@ -44,26 +45,57 @@ public class AccountManager {
 			return;
 		}
 		
-		printAcc(log);
-		System.out.println("삭제할 계좌 > ");
-		int sel = sc.nextInt();
-		
-		Account[] temp = UserManager.instance.user[log].acc;
-		
-		
-		
-		
+		if(cnt == 1) {
+			UserManager.instance.user[log].acc = null;
+			
+		}else if(cnt > 1) {
+			printAcc(log);
+			
+			System.out.println("삭제할 계좌를 선택하세요");
+			int sel = sc.nextInt()-1;
+
+			Account temp[] = UserManager.instance.user[log].acc;
+			UserManager.instance.user[log].acc = new Account[cnt -1];
+			
+			int j = 0;
+			for (int i = 0; i < cnt; i++) {
+				if(i != sel) {
+					UserManager.instance.user[log].acc[j] = new Account();
+					UserManager.instance.user[log].acc[j] = temp[i];
+					j+=1;
+				}
+			}
+			
+			
+		}
 		
 		UserManager.instance.user[log].accCnt -= 1;
+		System.out.println("삭제 완료");
 		
 	}
+	
+//	int j = 0;
+//    for (int i = 0; i < cnt; i++) {
+//       System.out.println(j + " " + sel);
+//       if(i != sel) {
+//       //   UserManager.instance.user[log].acc[j] = new Account();
+//          UserManager.instance.user[log].acc[j] = temp[i];
+//          System.out.println(UserManager.instance.user[log].acc[j].num);
+//          j+=1;
+//       }
+//    }
+
 	
 	void printAcc(int log) {
 		User temp = UserManager.instance.user[log];
 		System.out.println("ID : " + temp.id);
 		System.out.println("PW : " + temp.pw);
+		if(temp.accCnt == 0) {
+			System.out.println("보유하고 있는 계좌가 없습니다.");
+		}
+		
 		for (int i = 0; i < temp.accCnt; i++) {
-			System.out.println(temp.acc[i].num + " : " + temp.acc[i].money );
+			System.out.println("["+(i+1)+"]"+temp.acc[i].num + " : " + temp.acc[i].money );
 		}
 	}
 	

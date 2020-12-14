@@ -75,7 +75,7 @@ public class BankManager {
 				AccountManager.instance.createAcc(bank.log);
 			}
 			else if(sel == 2) {
-				
+				AccountManager.instance.deleteAcc(bank.log);
 			}
 			else if(sel == 3) {
 				AccountManager.instance.printAcc(bank.log);

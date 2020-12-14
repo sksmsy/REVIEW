@@ -11,9 +11,10 @@ public class FileManager {
 	static FileManager instance = new FileManager();
 	
 	String fileName = "ATM.txt";
-	String data = "";
+	String data="";
 	
 	void setData() {
+		data = "";
 		int cnt = UserManager.instance.userCnt;
 		data += cnt;
 		data += "\n";
@@ -37,8 +38,8 @@ public class FileManager {
 						data += ",";
 					}
 				}
+				data += "\n";
 			}
-			data += "\n";
 		}
 	}
 	
@@ -81,7 +82,7 @@ public class FileManager {
 				
 				
 				String temp[] = data.split("\n");
-				UserManager.instance.userCnt = Integer.parseInt(temp[0]); 
+				UserManager.instance.userCnt = Integer.parseInt(temp[0]);
 				UserManager.instance.user = new User[UserManager.instance.userCnt];
 				for (int i = 0; i < UserManager.instance.userCnt; i++) {
 					UserManager.instance.user[i] = new User();
@@ -92,8 +93,11 @@ public class FileManager {
 					String id = temp[i];
 					String pw = temp[i+1];
 					int accCnt = Integer.parseInt(temp[i+2]);
-					
 					String accInfo = temp[i+3];
+					
+					UserManager.instance.user[j].id = id;
+					UserManager.instance.user[j].pw = pw;
+					UserManager.instance.user[j].accCnt = accCnt;
 					
 					if(accCnt == 1) {
 						String temp2[] = accInfo.split("/");
