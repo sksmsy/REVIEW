@@ -8,8 +8,8 @@ public class ATM {
 	static Scanner sc = new Scanner(System.in);
 	static Random ran = new Random();
 	
-	FileManager fileManager = new FileManager.instance;
-	UserManager userManager = new UserManager.instance;
+	FileManager fileManager = FileManager.instance;
+	UserManager userManager = UserManager.instance;
 	static int log;
 	
 	
