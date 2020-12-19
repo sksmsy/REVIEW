@@ -29,6 +29,9 @@ public class User {
 			System.out.print(id + "\t" + pw + "\t");
 			for (int i = 0; i < accCnt; i++) {
 				System.out.print(accList[i].num + "/" + accList[i].money);
+				if(i != accCnt-1) {
+					System.out.print(", ");
+				}
 			}
 			System.out.println();
 		}
