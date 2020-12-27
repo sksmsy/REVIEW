@@ -8,11 +8,18 @@ public class User {
 	int accCnt;
 	
 	
-	User(){}
-	User(String id, String pw){
+	public User(){}
+	public User(String id, String pw){
 		this.id = id;
 		this.pw = pw;
 		
+	}
+	
+	public User(String id, String pw, Account[] accList, int accCnt) {
+		this.id = id;
+		this.pw = pw;
+		this.accList = accList;
+		this.accCnt = accCnt;
 	}
 	void printUser() {
 		

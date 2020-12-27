@@ -1,11 +1,5 @@
 package test;
 
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Vector;
-
-import static2.Account;
-import static2.UserManager;
 
 class Account{
 	String userId;

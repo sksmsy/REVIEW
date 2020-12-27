@@ -94,8 +94,8 @@ public class ATM {
 			System.out.println("ID 또는 PW를 확인해주세요.");
 		}else {
 			System.out.println(userManager.userList[log].id + "님 로그인");
+			loginMenu();
 		}
-		loginMenu();
 	}
 	
 	void join() {userManager.joinUser();}
